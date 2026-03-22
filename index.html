@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funeral Ease - Dignity in Departure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* This creates the soft, blurred background effect from your original image */
+        .hero-bg {
+            background: linear-gradient(to bottom, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 40%, rgba(240,248,240,0.8) 100%), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* Smooth transitions for hiding/showing elements */
+        .fade-enter {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .fade-enter-active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans min-h-screen flex flex-col">
+
+    <nav class="flex justify-between items-center px-10 py-5 bg-white z-50 relative border-b border-gray-100">
+        <div class="flex space-x-8 text-sm font-medium text-gray-800">
+            <a href="#" onclick="switchTab('home')" class="hover:text-[#115e3b] cursor-pointer">Services</a>
+            <a href="#" onclick="switchTab('how-it-works')" class="hover:text-[#115e3b] cursor-pointer" id="nav-how-it-works">How it Works</a>
+            <a href="#" onclick="switchTab('home')" class="hover:text-[#115e3b] cursor-pointer">Partnerships</a>
+            <a href="#" onclick="switchTab('pricing')" class="hover:text-[#115e3b] cursor-pointer" id="nav-pricing">Pricing</a>
+        </div>
+        
+        <div class="flex items-center cursor-pointer" onclick="switchTab('home')">
+            <span class="text-xl font-bold text-[#115e3b]"><i class="fas fa-omega mr-2"></i>Funeral Ease</span>
+        </div>
+    </nav>
+
+    <div id="home-tab" class="fade-enter fade-enter-active flex-grow">
+        <section class="hero-bg text-center pt-24 pb-36 px-4 relative">
+            <h1 class="text-5xl md:text-6xl font-serif text-gray-900 mb-5 leading-tight">
+                Dignity in Departure,<br>Ease for the Living.
+            </h1>
+            <p class="text-gray-800 max-w-xl mx-auto mb-8 font-medium">
+                Karachi's first tech-enabled funeral management service. We handle the logistics so you can focus on what matters.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <button onclick="openModal()" class="bg-[#115e3b] text-white px-6 py-2.5 rounded font-medium hover:bg-green-900 transition shadow-md">
+                    Start Booking
+                </button>
+                <button class="border border-gray-400 bg-white/60 text-gray-900 px-6 py-2.5 rounded font-medium hover:bg-white transition shadow-sm">
+                    Speak to a Coordinator
+                </button>
+            </div>
+        </section>
+
+        <section class="max-w-6xl mx-auto -mt-20 px-4 relative z-20 w-full mb-16">
+            <div class="bg-[#f8fbf8]/95 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white">
+                <div class="text-center text-sm font-medium text-gray-800 mb-4">Dashboard</div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 h-full">
+                        <div class="flex items-center space-x-2 mb-3">
+                            <div class="bg-[#115e3b] text-white p-1 rounded-full flex items-center justify-center w-6 h-6">
+                                <i class="fas fa-bus text-[10px]"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900 text-[15px]">Transport</h3>
+                        </div>
+                        <p class="text-[13px] text-gray-600 leading-relaxed">Mayat Bus dispatch from Al-Khidmat/Mosques.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 h-full">
+                        <div class="flex items-center space-x-2 mb-3">
+                            <div class="bg-[#115e3b] text-white p-1 rounded-full flex items-center justify-center w-6 h-6">
+                                <i class="fas fa-monument text-[10px]"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900 text-[15px]">Burial</h3>
+                        </div>
+                        <p class="text-[13px] text-gray-600 leading-relaxed">Seamless coordination with local Gorgans.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 h-full">
+                        <div class="flex items-center space-x-2 mb-3">
+                            <div class="bg-[#115e3b] text-white p-1 rounded-full flex items-center justify-center w-6 h-6">
+                                <i class="fas fa-file-invoice text-[10px]"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900 text-[15px]">Admin</h3>
+                        </div>
+                        <p class="text-[13px] text-gray-600 leading-relaxed">Documentation and legal processing.</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 h-full">
+                        <div class="flex items-center space-x-2 mb-3">
+                            <div class="bg-[#115e3b] text-white p-1 rounded-full flex items-center justify-center w-6 h-6">
+                                <i class="fas fa-concierge-bell text-[10px]"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900 text-[15px]">Hospitality</h3>
+                        </div>
+                        <p class="text-[13px] text-gray-600 leading-relaxed">Catering and tent arrangements handled.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-5xl mx-auto text-center mb-20 px-4">
+            <h2 class="text-2xl font-medium text-gray-900 mb-10">Powered by Trusted Partners</h2>
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-[#2d5086] text-white rounded flex items-center justify-center">
+                        <i class="fas fa-mosque text-xl"></i>
+                    </div>
+                    <span class="font-semibold text-gray-900 text-lg">Al-Khidmat</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-[#49a058] text-white rounded flex items-center justify-center">
+                        <i class="fas fa-book-open text-xl"></i>
+                    </div>
+                    <div class="text-left leading-tight">
+                        <span class="font-semibold text-gray-900 block text-[15px]">Local Graveyard</span>
+                        <span class="font-semibold text-gray-900 block text-[15px]">Authorities</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 text-[#115e3b] flex items-center justify-center">
+                        <i class="fas fa-concierge-bell text-4xl"></i>
+                    </div>
+                    <div class="text-left leading-tight">
+                        <span class="font-semibold text-gray-900 block text-[15px]">Local Catering</span>
+                        <span class="font-semibold text-gray-900 block text-[15px]">Service</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="how-it-works-tab" class="hidden flex-grow fade-enter pt-16 pb-20 px-4 bg-[#f8fbf8]">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-serif text-[#115e3b] mb-4">The Logistics of Grief, Simplified.</h1>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Families are often forced to manage fragmented vendors during the most difficult moments of their lives. We remove the logistical burden, so you can carry the emotional one.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-[#115e3b]">
+                    <div class="w-12 h-12 bg-green-50 text-[#115e3b] rounded-full flex items-center justify-center text-xl mb-4 font-bold shadow-sm">1</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3"><i class="fas fa-mobile-screen mr-2 text-[#115e3b]"></i>One-Click Booking</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Initiate the process through our website or app booking system. Our 24/7 support means we are available at any hour.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-[#115e3b]">
+                    <div class="w-12 h-12 bg-green-50 text-[#115e3b] rounded-full flex items-center justify-center text-xl mb-4 font-bold shadow-sm">2</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3"><i class="fas fa-ambulance mr-2 text-[#115e3b]"></i>Immediate Dispatch</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">We immediately dispatch a pre-vetted Mayat bus to your location from our trusted network.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-[#115e3b]">
+                    <div class="w-12 h-12 bg-green-50 text-[#115e3b] rounded-full flex items-center justify-center text-xl mb-4 font-bold shadow-sm">3</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3"><i class="fas fa-tree mr-2 text-[#115e3b]"></i>Graveyard Coordination</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">We handle all coordination with local authorities to ensure the burial plot is booked without delay.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-[#115e3b]">
+                    <div class="w-12 h-12 bg-green-50 text-[#115e3b] rounded-full flex items-center justify-center text-xl mb-4 font-bold shadow-sm">4</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3"><i class="fas fa-file-signature mr-2 text-[#115e3b]"></i>Streamlined Docs</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">All necessary legal paperwork, death certificates, and official documentation are processed for you.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-[#115e3b]">
+                    <div class="w-12 h-12 bg-green-50 text-[#115e3b] rounded-full flex items-center justify-center text-xl mb-4 font-bold shadow-sm">5</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3"><i class="fas fa-campground mr-2 text-[#115e3b]"></i>Guest Arrangements</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">We organize the tent setup, seating, and catering arrangements to comfortably accommodate visitors and family.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-[#115e3b]">
+                    <div class="w-12 h-12 bg-green-50 text-[#115e3b] rounded-full flex items-center justify-center text-xl mb-4 font-bold shadow-sm">6</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3"><i class="fas fa-seedling mr-2 text-[#115e3b]"></i>Post-Burial Care</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Our services extend beyond the funeral with managed, long-term grave maintenance subscriptions.</p>
+                </div>
+            </div>
+
+            <div class="bg-[#115e3b] text-white rounded-2xl p-10 text-center shadow-lg">
+                <h2 class="text-3xl font-serif mb-8">Why Funeral Ease is Different</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <i class="fas fa-layer-group text-3xl mb-4 text-green-300"></i>
+                        <h4 class="text-xl font-bold mb-2">Complete Service</h4>
+                        <p class="text-sm text-green-50">All arrangements from transport to catering are handled in a single, centralized place.</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-shield-check text-3xl mb-4 text-green-300"></i>
+                        <h4 class="text-xl font-bold mb-2">Verified Network</h4>
+                        <p class="text-sm text-green-50">We only work with pre-vetted, highly reliable vendor partnerships across Karachi.</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-hand-holding-dollar text-3xl mb-4 text-green-300"></i>
+                        <h4 class="text-xl font-bold mb-2">Transparent Pricing</h4>
+                        <p class="text-sm text-green-50">Clear, upfront costs with no hidden fees during a highly vulnerable time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pricing-tab" class="hidden flex-grow fade-enter pt-16 pb-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-serif text-[#115e3b] mb-6">Transparent Pricing</h1>
+            <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+                We believe in complete transparency during difficult times. Our packages are designed to cover everything from basic logistics to comprehensive memorial arrangements without any hidden costs.
+            </p>
+            
+            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-10 shadow-sm mb-10">
+                <i class="fas fa-clipboard-list text-4xl text-[#115e3b] mb-4"></i>
+                <h3 class="text-2xl font-medium text-gray-900 mb-4">Customized Care Packages</h3>
+                <p class="text-gray-600 mb-8">Because every family's needs are unique, our coordinators will work with you to provide a detailed, itemized quote based exactly on the services you require.</p>
+                <button onclick="openModal()" class="bg-[#115e3b] text-white px-8 py-3 rounded font-medium hover:bg-green-900 transition shadow-md">
+                    Request a Custom Quote
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-auto py-8 px-10 flex flex-col md:flex-row justify-between items-center text-xs text-white font-medium bg-[#055806]">
+        <p>Funeral Ease – Serving Karachi with Dignity</p>
+        <div class="flex space-x-6 my-4 md:my-0">
+            <a href="#" class="hover:text-green-200 transition duration-300">Privacy Policy</a>
+            <a href="#" class="hover:text-green-200 transition duration-300">Terms of Service</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <span>24/7 Helpline: 021-XXXXXXX</span>
+            <div class="flex space-x-3 text-lg">
+                <a href="#" class="hover:text-green-200 transition duration-300"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-green-200 transition duration-300"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-green-200 transition duration-300"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="hover:text-green-200 transition duration-300"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="bookingModal" class="fixed inset-0 bg-black/60 z-[100] hidden items-center justify-center backdrop-blur-sm">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 relative shadow-2xl transform transition-all">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 transition">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            
+            <div class="text-center mb-6">
+                <h2 class="text-2xl font-serif text-[#115e3b] mb-2">We are here for you.</h2>
+                <p class="text-sm text-gray-600">Please provide your details. A coordinator will call you back immediately.</p>
+            </div>
+
+            <form onsubmit="event.preventDefault(); alert('Thank you. A coordinator is being notified and will contact you shortly.'); closeModal();">
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                    <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#115e3b] focus:border-transparent outline-none" placeholder="Enter your full name">
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                    <input type="tel" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#115e3b] focus:border-transparent outline-none" placeholder="03XX-XXXXXXX">
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Area / Location</label>
+                    <select required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#115e3b] focus:border-transparent outline-none bg-white">
+                        <option value="" disabled selected>Select an area</option>
+                        <option value="malir">Malir</option>
+                        <option value="dha">DHA</option>
+                        <option value="clifton">Clifton</option>
+                        <option value="gulshan">Gulshan-e-Iqbal</option>
+                        <option value="other">Other Area in Karachi</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="w-full bg-[#115e3b] text-white py-3 rounded-lg font-medium hover:bg-green-900 transition shadow-md">
+                    Request Immediate Callback
+                </button>
+                
+                <p class="text-center text-xs text-gray-500 mt-4">
+                    Or call our 24/7 Helpline directly:<br>
+                    <span class="font-bold text-gray-800">021-XXXXXXX</span>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Array of all tab IDs
+        const allTabs = ['home', 'how-it-works', 'pricing'];
+
+        function switchTab(tabName) {
+            allTabs.forEach(tab => {
+                const tabElement = document.getElementById(tab + '-tab');
+                const navElement = document.getElementById('nav-' + tab);
+
+                if (tab === tabName) {
+                    // Show active tab
+                    tabElement.classList.remove('hidden');
+                    void tabElement.offsetWidth; // Force reflow for animation
+                    tabElement.classList.add('fade-enter-active');
+                    
+                    // Highlight active nav link (if it has an ID)
+                    if(navElement) {
+                        navElement.classList.add('font-bold');
+                    }
+                } else {
+                    // Hide inactive tabs
+                    tabElement.classList.add('hidden');
+                    tabElement.classList.remove('fade-enter-active');
+                    
+                    // Remove highlight from inactive nav links
+                    if(navElement) {
+                        navElement.classList.remove('font-bold');
+                    }
+                }
+            });
+        }
+
+        // Modal Logic
+        const modal = document.getElementById('bookingModal');
+        
+        function openModal() {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Close modal when clicking outside of the white box
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
